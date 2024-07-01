@@ -44,7 +44,7 @@ public class Aluguel {
         this.valor = valor;
         this.carro = carro;
         this.cliente = cliente;
-
+        this.status = AluguelStatus.PENDENTE;
     }
 
 }
