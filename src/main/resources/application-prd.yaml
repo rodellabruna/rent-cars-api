@@ -8,10 +8,10 @@ rest-cars-api:
       maximum-pool-size: 1
   h2:
     console:
-      enabled: false
+      enabled: true
       path: /h2-console
       settings:
-        web-allow-others: false
+        web-allow-others: true
   jpa:
     open-in-view: false
     properties:

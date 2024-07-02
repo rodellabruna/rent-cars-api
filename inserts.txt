@@ -1,0 +1,4 @@
+insert into cliente ( id, cpf, nome, telefone ) values (1, 987654321, 'Joao', 987654321)
+insert into cliente ( id, cpf, nome, telefone ) values (2, 987654322, 'Maria', 987654322)
+insert into carro ( id, ano, marca, modelo, status) values (1, 2024, 'VW', 'Gol', 'DISPONIVEL')
+insert into carro ( id, ano, marca, modelo, status) values (2, 2024, 'FIAT', '500', 'DISPONIVEL')

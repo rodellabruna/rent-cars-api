@@ -5,6 +5,7 @@ import static br.gov.sp.fatec.constants.PathConstants.CARRO_V1;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
 
+import br.gov.sp.fatec.domain.entity.Carro;
 import br.gov.sp.fatec.domain.request.CarroRequest;
 import br.gov.sp.fatec.domain.request.CarroUpdateRequest;
 import br.gov.sp.fatec.domain.response.CarroResponse;
@@ -69,7 +70,7 @@ public interface CarroController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @GetMapping(CARRO_ID)
-    ResponseEntity<CarroResponse> findById(@PathVariable Long id);
+    ResponseEntity<Carro> findById(@PathVariable Long id);
 
     @Operation(
             summary = "Buscar todos os carros",

@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.controller.impl;
 
 import br.gov.sp.fatec.controller.CarroController;
+import br.gov.sp.fatec.domain.entity.Carro;
 import br.gov.sp.fatec.domain.request.CarroRequest;
 import br.gov.sp.fatec.domain.request.CarroUpdateRequest;
 import br.gov.sp.fatec.domain.response.CarroResponse;
@@ -22,13 +23,13 @@ public class CarroControllerImpl implements CarroController {
     }
 
     @Override
-    public ResponseEntity<CarroResponse> findById(Long id) {
-        return null;
+    public ResponseEntity<Carro> findById(Long id) {
+        return ResponseEntity.ok(carroService.findById(id));
     }
 
     @Override
     public ResponseEntity<List<CarroResponse>> findAll() {
-        return null;
+        return ResponseEntity.ok(carroService.findAll());
     }
 
     @Override

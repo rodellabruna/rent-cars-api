@@ -12,16 +12,4 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface CarroRepository extends JpaRepository<Carro, Long> {
-    List<Carro> findByModelo(String modelo);
-
-    List<Carro> findByMarca(String marca);
-
-    List<Carro> findByAno(Integer ano);
-
-    List<Carro> findByCarroStatus(CarroStatus status);
-
-    Carro findById();
-
-
-}
+public interface CarroRepository extends JpaRepository<Carro, Long> { }

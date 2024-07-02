@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.controller.impl;
 
 import br.gov.sp.fatec.controller.ClienteController;
+import br.gov.sp.fatec.domain.entity.Cliente;
 import br.gov.sp.fatec.domain.request.ClienteRequest;
 import br.gov.sp.fatec.domain.request.ClienteUpdateRequest;
 import br.gov.sp.fatec.domain.response.ClienteResponse;
@@ -22,13 +23,14 @@ public class ClienteControllerImpl implements ClienteController {
     }
 
     @Override
-    public ResponseEntity<ClienteResponse> findById(Long id) {
-        return null;
+    public ResponseEntity<Cliente> findById(Long id) {
+
+        return ResponseEntity.ok(clienteService.findById(id));
     }
 
     @Override
     public ResponseEntity<List<ClienteResponse>> findAll() {
-        return null;
+        return ResponseEntity.ok(clienteService.findAll());
     }
 
     @Override
@@ -37,7 +39,8 @@ public class ClienteControllerImpl implements ClienteController {
     }
 
     @Override
-    public ResponseEntity<Void> deleteById(Long id) {
-        return null;
+    public ResponseEntity<Void> deleteById(Long id){
+        clienteService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

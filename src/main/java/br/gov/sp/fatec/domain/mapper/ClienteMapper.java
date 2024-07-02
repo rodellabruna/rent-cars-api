@@ -11,5 +11,5 @@ import org.mapstruct.Mapper;
 public interface ClienteMapper {
     Cliente map(ClienteRequest source);
 
-    ClienteResponse map(Cliente aluguel);
+    ClienteResponse map(Cliente source);
 }

@@ -11,14 +11,6 @@ import java.util.List;
 
 @Repository
 public interface AluguelRepository extends JpaRepository<Aluguel, Long> {
-    List<Aluguel> findByDataInicio(Date dataInicio);
 
-    List<Aluguel> findByDataFim(Date dataFim);
-
-    List<Aluguel> findByCarro(Carro carro);
-
-    List<Aluguel> findByCliente(Cliente cliente);
-
-    Aluguel findById();
 
 }

@@ -5,6 +5,7 @@ import static br.gov.sp.fatec.constants.PathConstants.CLIENTE_V1;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
 
+import br.gov.sp.fatec.domain.entity.Cliente;
 import br.gov.sp.fatec.domain.request.ClienteRequest;
 import br.gov.sp.fatec.domain.request.ClienteUpdateRequest;
 import br.gov.sp.fatec.domain.response.ClienteResponse;
@@ -69,7 +70,7 @@ public interface ClienteController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @GetMapping(CLIENTE_ID)
-    ResponseEntity<ClienteResponse> findById(@PathVariable Long id);
+    ResponseEntity<Cliente> findById(@PathVariable Long id);
 
     @Operation(
             summary = "Buscar todos os clientes",
