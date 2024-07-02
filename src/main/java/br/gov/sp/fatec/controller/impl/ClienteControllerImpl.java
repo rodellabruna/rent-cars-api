@@ -38,8 +38,8 @@ public class ClienteControllerImpl implements ClienteController {
     }
 
     @Override
-    public ResponseEntity<Void> updateById(Long id, ClienteUpdateRequest request){
-        return null;
+    public ResponseEntity<Cliente> updateById(Long id, ClienteUpdateRequest clienteUpdateRequest){
+        return ResponseEntity.ok(clienteService.updateById(id, clienteUpdateRequest));
     }
 
     @Override

@@ -41,7 +41,13 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void updateById(Long id, ClienteUpdateRequest clienteUpdateRequest) {}
+    public Cliente updateById(Long id, ClienteUpdateRequest clienteUpdateRequest) {
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Cliente not found"));
+        cliente.setNome(clienteUpdateRequest.nome());
+        cliente.setTelefone(clienteUpdateRequest.telefone());
+        cliente.setCpf(clienteUpdateRequest.cpf());
+        return clienteRepository.save(cliente);
+    }
 
     @Override
     public void deleteById(Long id) {

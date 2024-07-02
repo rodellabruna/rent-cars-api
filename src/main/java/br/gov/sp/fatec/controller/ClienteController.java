@@ -99,6 +99,7 @@ public interface ClienteController {
             summary = "Atualizar um cliente por ID",
             tags = {"clientes"},
             responses = {
+                    @ApiResponse(responseCode = "200", description = "OK"),
                 @ApiResponse(responseCode = "204", description = "No Content"),
                 @ApiResponse(
                         responseCode = "404",
@@ -116,7 +117,7 @@ public interface ClienteController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @PutMapping(CLIENTE_ID)
-    ResponseEntity<Void> updateById(@PathVariable Long id, @RequestBody ClienteUpdateRequest request);
+    ResponseEntity<Cliente> updateById(@PathVariable Long id, @RequestBody ClienteUpdateRequest request);
 
     @Operation(
             summary = "Deletar um cliente por ID",
