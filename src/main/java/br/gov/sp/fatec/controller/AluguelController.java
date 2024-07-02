@@ -5,6 +5,7 @@ import static br.gov.sp.fatec.constants.PathConstants.ALUGUEL_V1;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PROBLEM_JSON_VALUE;
 
+import br.gov.sp.fatec.domain.entity.Aluguel;
 import br.gov.sp.fatec.domain.request.AluguelRequest;
 import br.gov.sp.fatec.domain.request.AluguelUpdateRequest;
 import br.gov.sp.fatec.domain.response.AluguelResponse;
@@ -70,10 +71,10 @@ public interface AluguelController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @GetMapping(ALUGUEL_ID)
-    ResponseEntity<AluguelResponse> findById(@PathVariable Long id);
+    ResponseEntity<Aluguel> findById(@PathVariable Long id);
 
     @Operation(
-            summary = "Buscar todos os clientes",
+            summary = "Buscar todos os alugueis",
             tags = {"alugueis"},
             responses = {
                 @ApiResponse(responseCode = "200", description = "OK"),

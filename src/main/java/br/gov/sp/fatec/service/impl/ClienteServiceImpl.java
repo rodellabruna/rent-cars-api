@@ -1,6 +1,6 @@
 package br.gov.sp.fatec.service.impl;
 
-import br.gov.sp.fatec.domain.entity.Carro;
+
 import br.gov.sp.fatec.domain.entity.Cliente;
 import br.gov.sp.fatec.domain.mapper.ClienteMapper;
 import br.gov.sp.fatec.domain.request.ClienteRequest;

@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = SPRING)
 public interface AluguelMapper {
-    Aluguel map(AluguelRequest source);
+    Aluguel map(AluguelRequest aluguelRequest);
 
-    AluguelResponse map(Aluguel source);
+    AluguelResponse map(Aluguel aluguel);
 }

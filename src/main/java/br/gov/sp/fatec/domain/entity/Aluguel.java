@@ -38,7 +38,7 @@ public class Aluguel {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    public Aluguel(Date dataInicio, Date dataFim, double valor, Carro carro, Cliente cliente) {
+    public Aluguel(Date dataInicio, Date dataFim, double valor, Carro carro, Cliente cliente, AluguelStatus status) {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.valor = valor;

@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.controller.impl;
 
 import br.gov.sp.fatec.controller.AluguelController;
+import br.gov.sp.fatec.domain.entity.Aluguel;
 import br.gov.sp.fatec.domain.request.AluguelRequest;
 import br.gov.sp.fatec.domain.request.AluguelUpdateRequest;
 import br.gov.sp.fatec.domain.response.AluguelResponse;
@@ -22,13 +23,13 @@ public class AluguelControllerImpl implements AluguelController {
     }
 
     @Override
-    public ResponseEntity<AluguelResponse> findById(Long id) {
-        return null;
+    public ResponseEntity<Aluguel> findById(Long id) {
+        return ResponseEntity.ok(aluguelService.findById(id));
     }
 
     @Override
     public ResponseEntity<List<AluguelResponse>> findAll() {
-        return null;
+        return ResponseEntity.ok(aluguelService.findAll());
     }
 
     @Override
@@ -38,6 +39,7 @@ public class AluguelControllerImpl implements AluguelController {
 
     @Override
     public ResponseEntity<Void> deleteById(Long id) {
+        aluguelService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }

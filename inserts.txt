@@ -2,3 +2,7 @@ insert into cliente ( id, cpf, nome, telefone ) values (1, 987654321, 'Joao', 98
 insert into cliente ( id, cpf, nome, telefone ) values (2, 987654322, 'Maria', 987654322)
 insert into carro ( id, ano, marca, modelo, status) values (1, 2024, 'VW', 'Gol', 'DISPONIVEL')
 insert into carro ( id, ano, marca, modelo, status) values (2, 2024, 'FIAT', '500', 'DISPONIVEL')
+insert into aluguel (id, carro_id, cliente_id, data_fim, data_inicio, valor, status)
+values (1, 1, 52, '2024-02-02', '2024-01-01', 250.00, 'ATIVO');
+insert into aluguel (id, carro_id, cliente_id, data_fim, data_inicio, valor, status)
+values (2, 2, 1, '2024-07-02', '2024-06-30', 100.00, 'ATIVO');
