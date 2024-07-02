@@ -38,7 +38,8 @@ public class CarroControllerImpl implements CarroController {
     }
 
     @Override
-    public ResponseEntity<Void> deleteById(Long id) {
-        return null;
+    public ResponseEntity<Void> deleteById(Long id){
+        carroService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

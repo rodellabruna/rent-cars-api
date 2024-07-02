@@ -44,5 +44,10 @@ public class CarroServiceImpl implements CarroService {
     public void updateById(Long id, CarroUpdateRequest carroUpdateRequest) {}
 
     @Override
-    public void deleteById(Long id) {}
+    public void deleteById(Long id) {
+        Carro carro = carroRepository
+            .findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Carro não encontrado"));
+        carroRepository.delete(carro);
+    }
 }

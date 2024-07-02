@@ -5,8 +5,11 @@ import br.gov.sp.fatec.domain.entity.Cliente;
 import br.gov.sp.fatec.domain.request.ClienteRequest;
 import br.gov.sp.fatec.domain.request.ClienteUpdateRequest;
 import br.gov.sp.fatec.domain.response.ClienteResponse;
+import br.gov.sp.fatec.repository.ClienteRepository;
 import br.gov.sp.fatec.service.ClienteService;
 import java.util.List;
+
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,12 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClienteControllerImpl implements ClienteController {
 
     private final ClienteService clienteService;
+    private final ClienteRepository clienteRepository;
 
     @Override
-    public ResponseEntity<ClienteResponse> save(ClienteRequest cliente) {
-        return null;
+    public ResponseEntity<ClienteResponse> save(ClienteRequest clienteRequest) {
+        ClienteResponse cliente = clienteService.save(clienteRequest);
+        return ResponseEntity.ok(cliente);
     }
-
     @Override
     public ResponseEntity<Cliente> findById(Long id) {
 
@@ -34,7 +38,7 @@ public class ClienteControllerImpl implements ClienteController {
     }
 
     @Override
-    public ResponseEntity<Void> updateById(Long id, ClienteUpdateRequest request) {
+    public ResponseEntity<Void> updateById(Long id, ClienteUpdateRequest request){
         return null;
     }
 
