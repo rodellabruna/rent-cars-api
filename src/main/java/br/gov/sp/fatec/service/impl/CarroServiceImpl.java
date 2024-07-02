@@ -23,7 +23,9 @@ public class CarroServiceImpl implements CarroService {
 
     @Override
     public CarroResponse save(CarroRequest carroRequest) {
-        return null;
+        Carro carro = carroMapper.map(carroRequest);
+        Carro savedCarro = carroRepository.save(carro);
+        return carroMapper.map(savedCarro);
     }
 
     @Override

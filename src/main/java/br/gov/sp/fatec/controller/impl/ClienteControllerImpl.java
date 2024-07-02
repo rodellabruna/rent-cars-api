@@ -12,6 +12,7 @@ import java.util.List;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,9 +23,9 @@ public class ClienteControllerImpl implements ClienteController {
     private final ClienteRepository clienteRepository;
 
     @Override
-    public ResponseEntity<ClienteResponse> save(ClienteRequest clienteRequest) {
+    public ResponseEntity<ClienteResponse> save(@RequestBody ClienteRequest clienteRequest) {
         ClienteResponse cliente = clienteService.save(clienteRequest);
-        return ResponseEntity.ok(cliente);
+        return ResponseEntity.status(201).body(cliente);
     }
     @Override
     public ResponseEntity<Cliente> findById(Long id) {

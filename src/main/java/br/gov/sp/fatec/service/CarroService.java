@@ -7,7 +7,7 @@ import br.gov.sp.fatec.domain.response.CarroResponse;
 import java.util.List;
 
 public interface CarroService {
-    CarroResponse save(CarroRequest carroRequest);
+    CarroResponse save(CarroRequest carro);
 
     Carro findById(Long id);
 

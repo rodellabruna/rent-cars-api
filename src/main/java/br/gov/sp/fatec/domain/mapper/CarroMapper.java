@@ -9,7 +9,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = SPRING)
 public interface CarroMapper {
-    Carro map(CarroRequest source);
+    Carro map(CarroRequest carroRequest);
 
-    CarroResponse map(Carro source);
+    CarroResponse map(Carro carro);
 }

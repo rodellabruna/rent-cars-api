@@ -7,10 +7,12 @@ import br.gov.sp.fatec.domain.request.CarroRequest;
 import br.gov.sp.fatec.domain.request.CarroUpdateRequest;
 import br.gov.sp.fatec.domain.request.ClienteUpdateRequest;
 import br.gov.sp.fatec.domain.response.CarroResponse;
+import br.gov.sp.fatec.domain.response.ClienteResponse;
 import br.gov.sp.fatec.service.CarroService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,8 +22,9 @@ public class CarroControllerImpl implements CarroController {
     private final CarroService carroService;
 
     @Override
-    public ResponseEntity<CarroResponse> save(CarroRequest carro) {
-        return null;
+    public ResponseEntity<CarroResponse> save(@RequestBody CarroRequest carroRequest) {
+        CarroResponse carro = carroService.save(carroRequest);
+        return ResponseEntity.status(201).body(carro);
     }
 
     @Override

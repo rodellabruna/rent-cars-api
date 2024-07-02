@@ -23,8 +23,9 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public ClienteResponse save(ClienteRequest clienteRequest) {
-
-        return clienteMapper.map(clienteRepository.save(clienteMapper.map(clienteRequest)));
+        Cliente cliente = clienteMapper.map(clienteRequest);
+        Cliente savedCliente = clienteRepository.save(cliente);
+        return clienteMapper.map(savedCliente);
     }
 
     @Override
