@@ -2,8 +2,10 @@ package br.gov.sp.fatec.controller.impl;
 
 import br.gov.sp.fatec.controller.CarroController;
 import br.gov.sp.fatec.domain.entity.Carro;
+import br.gov.sp.fatec.domain.entity.Cliente;
 import br.gov.sp.fatec.domain.request.CarroRequest;
 import br.gov.sp.fatec.domain.request.CarroUpdateRequest;
+import br.gov.sp.fatec.domain.request.ClienteUpdateRequest;
 import br.gov.sp.fatec.domain.response.CarroResponse;
 import br.gov.sp.fatec.service.CarroService;
 import java.util.List;
@@ -33,10 +35,9 @@ public class CarroControllerImpl implements CarroController {
     }
 
     @Override
-    public ResponseEntity<Void> updateById(Long id, CarroUpdateRequest request) {
-        return null;
+    public ResponseEntity<Carro> updateById(Long id, CarroUpdateRequest carroUpdateRequest){
+        return ResponseEntity.ok(carroService.updateById(id, carroUpdateRequest));
     }
-
     @Override
     public ResponseEntity<Void> deleteById(Long id){
         carroService.deleteById(id);

@@ -99,6 +99,7 @@ public interface CarroController {
             summary = "Atualizar um carro por ID",
             tags = {"carros"},
             responses = {
+                    @ApiResponse(responseCode = "200", description = "OK"),
                 @ApiResponse(responseCode = "204", description = "No Content"),
                 @ApiResponse(
                         responseCode = "404",
@@ -116,7 +117,7 @@ public interface CarroController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @PutMapping(CARRO_ID)
-    ResponseEntity<Void> updateById(@PathVariable Long id, @RequestBody CarroUpdateRequest request);
+    ResponseEntity<Carro> updateById(@PathVariable Long id, @RequestBody CarroUpdateRequest request);
 
     @Operation(
             summary = "Deletar um carro por ID",

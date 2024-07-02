@@ -41,7 +41,14 @@ public class CarroServiceImpl implements CarroService {
     }
 
     @Override
-    public void updateById(Long id, CarroUpdateRequest carroUpdateRequest) {}
+    public Carro updateById(Long id, CarroUpdateRequest carroUpdateRequest) {
+        Carro carro = carroRepository.findById(id).orElseThrow(() -> new RuntimeException("Carro not found"));
+        carro.setModelo(carroUpdateRequest.modelo());
+        carro.setMarca(carroUpdateRequest.marca());
+        carro.setAno(carroUpdateRequest.ano());
+        carro.setStatus(carroUpdateRequest.status());
+        return carroRepository.save(carro);
+    }
 
     @Override
     public void deleteById(Long id) {

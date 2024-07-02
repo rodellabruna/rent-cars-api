@@ -13,7 +13,7 @@ public interface CarroService {
 
     List<CarroResponse> findAll();
 
-    void updateById(Long id, CarroUpdateRequest carroUpdateRequest);
+    Carro updateById(Long id, CarroUpdateRequest carroUpdateRequest);
 
     void deleteById(Long id);
 }
