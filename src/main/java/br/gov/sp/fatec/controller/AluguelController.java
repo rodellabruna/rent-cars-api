@@ -100,6 +100,7 @@ public interface AluguelController {
             summary = "Atualizar um aluguel por ID",
             tags = {"alugueis"},
             responses = {
+                    @ApiResponse(responseCode = "200", description = "OK"),
                 @ApiResponse(responseCode = "204", description = "No Content"),
                 @ApiResponse(
                         responseCode = "404",
@@ -117,7 +118,7 @@ public interface AluguelController {
                                         schema = @Schema(implementation = ProblemDetail.class)))
             })
     @PutMapping(ALUGUEL_ID)
-    ResponseEntity<Void> updateById(@PathVariable Long id, @RequestBody AluguelUpdateRequest request);
+    ResponseEntity<Aluguel> updateById(@PathVariable Long id, @RequestBody AluguelUpdateRequest request);
 
     @Operation(
             summary = "Deletar um aluguel por ID",

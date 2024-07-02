@@ -6,4 +6,4 @@ import br.gov.sp.fatec.domain.enums.AluguelStatus;
 
 import java.util.Date;
 
-public record AluguelUpdateRequest(Date dataInicio, Date dataFim, double valor, Carro carro, Cliente cliente, AluguelStatus status) {}
+public record AluguelUpdateRequest(Date dataInicio, Date dataFim, double valor, Long carroId, Long clienteId, AluguelStatus status) {}

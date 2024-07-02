@@ -5,10 +5,13 @@ import br.gov.sp.fatec.domain.entity.Aluguel;
 import br.gov.sp.fatec.domain.request.AluguelRequest;
 import br.gov.sp.fatec.domain.request.AluguelUpdateRequest;
 import br.gov.sp.fatec.domain.response.AluguelResponse;
+import br.gov.sp.fatec.domain.response.ClienteResponse;
 import br.gov.sp.fatec.service.AluguelService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,8 +21,9 @@ public class AluguelControllerImpl implements AluguelController {
     private final AluguelService aluguelService;
 
     @Override
-    public ResponseEntity<AluguelResponse> save(AluguelRequest aluguel) {
-        return null;
+    public ResponseEntity<AluguelResponse> save(@RequestBody AluguelRequest aluguelRequest) {
+        AluguelResponse aluguel = aluguelService.save(aluguelRequest);
+        return ResponseEntity.status(201).body(aluguel);
     }
 
     @Override
@@ -33,8 +37,9 @@ public class AluguelControllerImpl implements AluguelController {
     }
 
     @Override
-    public ResponseEntity<Void> updateById(Long id, AluguelUpdateRequest request) {
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Aluguel> updateById(@PathVariable Long id, @RequestBody AluguelUpdateRequest aluguelUpdateRequest) {
+        Aluguel aluguel = aluguelService.updateById(id, aluguelUpdateRequest);
+        return ResponseEntity.ok(aluguel);
     }
 
     @Override
